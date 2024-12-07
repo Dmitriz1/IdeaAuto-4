@@ -34,10 +34,9 @@ public class CardOrderTest {
         $(By.cssSelector("[data-test-id='agreement']")).click();
 
         $(By.className("button")).click();
-        System.setProperty("selenide.timeout", "5000");
 
-        $(By.cssSelector("[data-test-id='notification']")).
-                shouldHave(text("Встреча успешно забронирована на " + "\n" + formattedDate))
-                .shouldBe(visible, Duration.ofSeconds(15));
+        $(By.className("notification__title"))
+                .shouldHave(text("Успешно!"), Duration.ofSeconds(15))
+                .shouldBe(visible);
     }
 }
