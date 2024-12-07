@@ -35,8 +35,8 @@ public class CardOrderTest {
 
         $(By.className("button")).click();
 
-        $(By.className("notification__title"))
-                .shouldHave(text("Успешно!"), Duration.ofSeconds(15))
+        $(By.className("notification__content"))
+                .shouldHave(text("Встреча успешно забронирована на " + formattedDate), Duration.ofSeconds(15))
                 .shouldBe(visible);
     }
 }
